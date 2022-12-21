@@ -67,16 +67,15 @@ void add_elements(int**& matrix, int& rows, int& columns)
 
 void display_matrix(int**& matrix, int rows, int columns)
 {
-	printf("matrix:\n");
+	cout << "matrix:" << endl;
 	for (int i = 0; i < rows; i++)
 	{
 		for (int j = 0; j < columns; j++)
-		{
-			printf("%d ", matrix[i][j]);
-		}
-		printf("\n");
+			cout << matrix[i][j] << " ";
+		
+		cout << endl;
 	}
-	printf("\n");
+	cout << endl;
 }
 
 int calculation(int*& str, int columns)
@@ -112,9 +111,7 @@ void add_strikes(int*& total_count, int**& matrix, int rows, int columns)
 void display_strikes(int*& total_count, int rows)
 {
 	for (int j = 0; j < rows; j++)
-	{
-		printf("row N%d strike : %d\n", (j + 1), total_count[j]);
-	}
+		cout << "row N" << j + 1 << "strike : " << total_count[j] << endl;
 }
 
 void display_highest_row(int*& total_count, int rows)
@@ -125,5 +122,5 @@ void display_highest_row(int*& total_count, int rows)
 		if (total_count[k] > total_count[k - 1])
 			index = k;
 	}
-	printf("\nthe highest strike has row N%d: %d\n", (index + 1), total_count[index]);
+	cout << "\nthe highest strike has row N" << index + 1 << ": " << total_count[index] << endl;
 }
